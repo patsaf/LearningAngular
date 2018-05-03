@@ -1,0 +1,10 @@
+div.main {
+    width: 50%; margin: 0 auto;
+    text-align: center;
+    color: dimgray;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+table {
+    table-layout: fixed;
+}

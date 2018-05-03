@@ -1,0 +1,31 @@
+<div class="main">
+  <br>
+  <br>
+  <br>
+  <h3>All cars to sell:</h3>
+  <br>
+  <div *ngIf="cars.length > 0; else noCars">
+    <div *ngFor="let car of cars">
+      <table style="width:100%">
+        <tr>
+          <th rowspan="2">{{car.id}}.</th>
+          <td>{{car.make}}</td>
+          <td rowspan="2">
+            <button type="button" class="btn btn-outline-secondary" (click)="seeCar(car.id)">See details</button>
+          </td>
+        </tr>
+        <tr>
+          <td>{{car.price}} tys. zł.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br>
+  <button type="button" class="btn btn-outline-secondary btn-lg" (click)="addNewCar()">Add new car</button>
+  <br>
+  <br>
+</div>
+
+<ng-template #noCars>
+  <p>There are no cars to sell :(</p>
+</ng-template>

@@ -1,0 +1,43 @@
+<div class="main">
+  <br>
+  <br>
+  <br>
+  <h3>Type in your car's details:</h3>
+  <br>
+  <table>
+    <tr>
+      <th>Make:</th>
+      <td>
+        <input [(ngModel)]="inputMake">
+      </td>
+      <td>
+        <div [className]="errorMakeClass">Make is required!</div>
+      </td>
+    </tr>
+    <tr>
+      <th>Model:</th>
+      <td>
+        <input [(ngModel)]="inputModel">
+      </td>
+      <td>
+        <div [className]="errorModelClass">Model is required!</div>
+      </td>
+    </tr>
+    <tr>
+      <th>Price:</th>
+      <td>
+        <input [(ngModel)]="inputPrice">
+      </td>
+      <td>
+        <div [className]="errorPriceClass" *ngIf="(errorPriceClass=='hide' || errorPriceClass=='show'); else invalidFormat">
+          Price is required!</div>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <button type="button" class="btn btn-outline-secondary" (click)="saveNewCar()">Add</button>
+</div>
+
+<ng-template #invalidFormat>
+  <p style="color: red;">Price must be a number!</p>
+</ng-template>
